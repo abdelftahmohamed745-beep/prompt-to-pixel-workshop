@@ -48,8 +48,8 @@
   --color-warning: var(--warning);
   --color-diff-add: var(--diff-add);
   --color-diff-remove: var(--diff-remove);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-sans: var(--app-font-sans);
+  --font-mono: var(--app-font-mono);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -72,8 +72,8 @@
 
 :root {
   --radius: 0.5rem;
-  --font-sans: "Geist", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --app-font-sans: "Geist", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --app-font-mono: "JetBrains Mono", ui-monospace, monospace;
   --background: oklch(0.973 0.006 95);
   --foreground: oklch(0.205 0 0);
   --card: oklch(0.993 0.003 95);
@@ -166,7 +166,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-sans);
+    font-family: var(--app-font-sans);
     font-size: 15px;
     line-height: 1.55;
     overflow-x: hidden;
