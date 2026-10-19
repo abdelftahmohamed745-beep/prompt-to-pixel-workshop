@@ -1,24 +1,25 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { FullLoader } from "@/components/forge/common";
+import { useApp } from "@/lib/store";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "ForgeFE — Describe it, preview it, ship it" },
+      { name: "description", content: "ForgeFE is an AI website builder: describe a site, inspect a live preview and review every code change." },
+      { property: "og:title", content: "ForgeFE — Describe it, preview it, ship it" },
+      { property: "og:description", content: "Describe a site, inspect a live preview and review every code change." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  const { ready, session } = useApp();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (ready) navigate({ to: session ? "/dashboard" : "/login", replace: true });
+  }, [ready, session, navigate]);
+  return <FullLoader />;
 }
