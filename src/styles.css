@@ -217,3 +217,13 @@
   min-height: 100vh;
   min-height: 100dvh;
 }
+
+.tok-tag { color: oklch(0.5 0.12 250); }
+.tok-attr { color: oklch(0.52 0.12 40); }
+.tok-string { color: oklch(0.5 0.12 150); }
+.tok-comment { color: var(--color-muted-foreground); font-style: italic; }
+.tok-keyword { color: var(--color-foreground); font-weight: 600; }
+.tok-punct { color: var(--color-muted-foreground); }
+.dark .tok-tag { color: oklch(0.78 0.1 250); }
+.dark .tok-attr { color: oklch(0.8 0.1 60); }
+.dark .tok-string { color: oklch(0.8 0.12 145); }
