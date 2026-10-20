@@ -6,7 +6,6 @@ import { AppHeader, EmptyState, RequireSession } from "@/components/forge/common
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { RenameDialog, DeleteDialog } from "@/components/forge/project-dialogs";
@@ -201,15 +200,6 @@ function Dashboard() {
       </main>
       <RenameDialog project={renaming} onClose={() => setRenaming(null)} />
       <DeleteDialog project={deleting} onClose={() => setDeleting(null)} />
-    </div>
-  );
-}
-
-export function DashboardSkeleton() {
-  return (
-    <div className="space-y-2 p-4">
-      <Skeleton className="h-10 w-full" />
-      <Skeleton className="h-10 w-full" />
     </div>
   );
 }
