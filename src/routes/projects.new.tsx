@@ -12,8 +12,8 @@ import type { TKey } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/projects/new")({
-  validateSearch: (s: Record<string, unknown>): { prompt?: string } => ({
-    prompt: typeof s.prompt === "string" ? s.prompt : undefined,
+  validateSearch: (s: Record<string, unknown>): { prompt?: string | undefined } => ({
+    prompt: typeof s["prompt"] === "string" ? s["prompt"] : undefined,
   }),
   head: () => ({
     meta: [

@@ -34,8 +34,8 @@ const sections: [Section, TKey, typeof User][] = [
 ];
 
 export const Route = createFileRoute("/settings")({
-  validateSearch: (s: Record<string, unknown>): { section?: Section } => ({
-    section: sections.some(([k]) => k === s.section) ? (s.section as Section) : undefined,
+  validateSearch: (s: Record<string, unknown>): { section?: Section | undefined } => ({
+    section: sections.some(([k]) => k === s["section"]) ? (s["section"] as Section) : undefined,
   }),
   head: () => ({
     meta: [
