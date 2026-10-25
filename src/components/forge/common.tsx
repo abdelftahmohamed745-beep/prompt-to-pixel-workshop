@@ -172,7 +172,7 @@ export function PasswordInput(props: React.ComponentProps<typeof Input>) {
   );
 }
 
-export function FieldError({ id, msg }: { id: string; msg?: string }) {
+export function FieldError({ id, msg }: { id: string; msg?: string | undefined }) {
   if (!msg) return null;
   return (
     <p id={id} className="text-[13px] text-destructive" role="alert">
