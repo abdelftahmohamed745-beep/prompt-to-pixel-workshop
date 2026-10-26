@@ -4,7 +4,7 @@ import { Info } from "lucide-react";
 import { Brand, LangToggle } from "./common";
 import { useApp } from "@/lib/store";
 
-export function AuthShell({ title, sub, children }: { title: string; sub?: string; children: ReactNode }) {
+export function AuthShell({ title, sub, children }: { title: string; sub?: string | undefined; children: ReactNode }) {
   const { t } = useApp();
   return (
     <div className="grid min-h-app lg:grid-cols-[1fr_minmax(0,520px)]">

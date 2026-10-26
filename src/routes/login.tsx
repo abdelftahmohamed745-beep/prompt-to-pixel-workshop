@@ -44,7 +44,7 @@ function Login() {
     setBusy(true);
     // Demo only: no credentials are verified anywhere.
     setTimeout(() => {
-      const name = profile.email === email.trim() && profile.name ? profile.name : email.split("@")[0];
+      const name = profile.email === email.trim() && profile.name ? profile.name : (email.split("@")[0] ?? "");
       signIn({ name, email: email.trim() }, remember);
       navigate({ to: "/dashboard" });
     }, 500);

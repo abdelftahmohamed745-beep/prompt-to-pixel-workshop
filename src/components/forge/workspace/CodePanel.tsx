@@ -112,7 +112,7 @@ export function CodePanel({ project, compact = false }: { project: Project; comp
           size="sm"
           className="h-9"
           onClick={async () => {
-            if (await copyText(project.files[sel], t)) {
+            if (await copyText(project.files[sel] ?? "", t)) {
               setCopied(true);
               setTimeout(() => setCopied(false), 1500);
             }
